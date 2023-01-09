@@ -34,7 +34,7 @@ const getColors = (rawData) => {
     if (!match) {
       console.log(d, match);
       return {
-        primary: null
+        primary: null,
       };
     }
     let groups = match.groups;
@@ -45,7 +45,7 @@ const getColors = (rawData) => {
       primary,
       secondary,
       count: parseInt(groups.count, 10),
-      isSameColor: primary === secondary
+      isSameColor: primary === secondary,
     };
   });
 };
@@ -71,7 +71,7 @@ const TabPanel = ({ children, value, index, ...other }) => {
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
@@ -82,12 +82,11 @@ export default function App() {
     setValue(newValue);
   };
 
-  const colorsUS = getColors(rawProdUS);
   // const colors = getColors(data);
   // console.log(colors);
   return (
     <div className="App">
-      <h3>Non-RON groups with branding. Data collected on January, 6, 2023.</h3>
+      <h3>RON groups with branding. Data collected on January, 6, 2023.</h3>
       <Tabs value={value} onChange={handleChange}>
         <Tab label="Prod US" {...a11yProps(0)} />
         <Tab label="Prod EU" {...a11yProps(1)} />
